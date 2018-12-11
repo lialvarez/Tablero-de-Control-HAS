@@ -57,7 +57,9 @@ def main():
     boxMngr = BoxManager()
     app = QtWidgets.QApplication(sys.argv)
     form = TableroHAS(boxMngr)
-    form.show() 
+    form.show()
+    # Aca correr cada n segundos el update del OPC Manager
+    # Que va a leer los tags para actualizar estado 
     timer = QtCore.QTimer()
     timer.timeout.connect(boxMngr.crearCaja)
     timer.start(1000)
